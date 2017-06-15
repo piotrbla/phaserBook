@@ -43,7 +43,7 @@ function create() {
 function update() {
     updateCount += 1
 	game.debug.text("Left Button: " +
-                    game.input.activePointer.leftButton.isDown, 300, 132);
+                    game.input.activePointer.leftButton.isDown, 200, 22);
     if(cursors.left.isDown) {
         catcher.x -= 5;
         catcher.scale.x = 1;
