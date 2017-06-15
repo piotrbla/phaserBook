@@ -2,9 +2,9 @@
 /*globals console:false */
 "use strict";
 
-var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
-var updateCount = 0;
-var cat, catcher, cursors, txtScore, score;
+let game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+let updateCount = 0;
+let cat, catcher, cursors, txtScore, score;
 
 function preload() {
     game.load.image('cat', 'assets/cat.png');
