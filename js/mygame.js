@@ -35,6 +35,21 @@ function create() {
 
 function update() {
     updateCount += 1
-	game.debug.text("Left Button: " + game.input.activePointer.leftButton.isDown, 300, 132);
+	game.debug.text("Left Button: " +
+                    game.input.activePointer.leftButton.isDown, 300, 132);
+    if(cursors.left.isDown) {
+        catcher.x -= 5;
+        catcher.scale.x = 1;
+    }
+    if(cursors.right.isDown) {
+        catcher.x += 5;
+        catcher.scale.x = -1;
+    }
+    if(cursors.up.isDown) {
+        catcher.y -= 5;
+    }
+    if(cursors.down.isDown) {
+        catcher.y += 5;
+    }
 }
 
