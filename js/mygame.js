@@ -6,6 +6,13 @@ let game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create
 let updateCount = 0;
 let cat, catcher, cursors, txtScore, score;
 
+function catHitHandler(catcherObject, catObject) {
+    catObject.x = Math.random() * game.width;
+    catObject.y = Math.random() * game.height;
+    score ++;
+    txtScore.setText(score.toString());
+}
+
 function preload() {
     game.load.image('cat', 'assets/cat.png');
     game.load.image('catcher', 'assets/catcher.png');
@@ -51,5 +58,5 @@ function update() {
     if(cursors.down.isDown) {
         catcher.y += 5;
     }
+    game.physics.arcade.overlap(catcher, cat, catHitHandler);
 }
-
